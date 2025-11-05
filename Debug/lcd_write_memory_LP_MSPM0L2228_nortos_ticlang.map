@@ -1,0 +1,332 @@
+******************************************************************************
+            TI ARM Clang Linker PC v4.0.4                      
+******************************************************************************
+>> Linked Wed Nov  5 01:33:01 2025
+
+OUTPUT FILE NAME:   <lcd_write_memory_LP_MSPM0L2228_nortos_ticlang.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000669
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000007b0  0003f850  R  X
+  SRAM                  20200000   00008000  00000160  00007ea0  RW X
+  BCR_CONFIG            41c00000   000000ff  00000000  000000ff  R   
+  BSL_CONFIG            41c00100   00000080  00000000  00000080  R   
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000007b0   000007b0    r-x
+  00000000    00000000    000000c0   000000c0    r-- .intvecs
+  000000c0    000000c0    00000640   00000640    r-x .text
+  00000700    00000700    00000098   00000098    r-- .rodata
+  00000798    00000798    00000018   00000018    r-- .cinit
+20200000    20200000    00000060   00000000    rw-
+  20200000    20200000    00000060   00000000    rw- .bss
+20207f00    20207f00    00000100   00000000    rw-
+  20207f00    20207f00    00000100   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000c0     
+                  00000000    000000c0     startup_mspm0l222x_ticlang.o (.intvecs)
+
+.text      0    000000c0    00000640     
+                  000000c0    00000174     ti_msp_dl_config.o (.text.SYSCFG_DL_LCD_init)
+                  00000234    00000168     lcd_write_memory.o (.text.main)
+                  0000039c    00000154     lcd_write_memory.o (.text.LCD_showChar)
+                  000004f0    0000008a     driverlib.a : dl_lcd.o (.text.DL_LCD_setPinAsCommon)
+                  0000057a    00000002     startup_mspm0l222x_ticlang.o (.text.Default_Handler)
+                  0000057c    00000044     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
+                  000005c0    00000042     driverlib.a : dl_lcd.o (.text.DL_LCD_setPinAsLCDFunction)
+                  00000602    00000002     ti_msp_dl_config.o (.text.SYSCFG_DL_GPIO_init)
+                  00000604    0000003c     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  00000640    00000028     driverlib.a : dl_lcd.o (.text.DL_LCD_init)
+                  00000668    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
+                  00000690    00000024     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
+                  000006b4    00000016     libc.a : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
+                  000006ca    00000014     ti_msp_dl_config.o (.text.SYSCFG_DL_init)
+                  000006de    0000000a     driverlib.a : dl_common.o (.text.DL_Common_delayCycles)
+                  000006e8    00000006     libc.a : exit.c.obj (.text:abort)
+                  000006ee    00000004     libsysbm.a : hostexit.c.obj (.text.HOSTexit)
+                  000006f2    00000004     startup_mspm0l222x_ticlang.o (.text.Reset_Handler)
+                  000006f6    00000004     libc.a : pre_init.c.obj (.text._system_pre_init)
+                  000006fa    00000006     --HOLE-- [fill = 0]
+
+.cinit     0    00000798    00000018     
+                  00000798    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000007a0    00000004     (__TI_handler_table)
+                  000007a4    00000008     (__TI_cinit_table)
+                  000007ac    00000004     --HOLE-- [fill = 0]
+
+.rodata    0    00000700    00000098     
+                  00000700    00000068     lcd_write_memory.o (.rodata.alphabetUpper)
+                  00000768    00000028     lcd_write_memory.o (.rodata.digit)
+                  00000790    00000004     ti_msp_dl_config.o (.rodata.gLCDConfig)
+                  00000794    00000004     --HOLE-- [fill = 0]
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+.bss       0    20200000    00000060     UNINITIALIZED
+                  20200000    00000010     (.common:gLCDPinPosition1)
+                  20200010    00000010     (.common:gLCDPinPosition2)
+                  20200020    00000010     (.common:gLCDPinPosition3)
+                  20200030    00000010     (.common:gLCDPinPosition4)
+                  20200040    00000010     (.common:gLCDPinPosition5)
+                  20200050    00000010     (.common:gLCDPinPosition6)
+
+.stack     0    20207f00    00000100     UNINITIALIZED
+                  20207f00    00000004     libc.a : boot_cortex_m.c.obj (.stack)
+                  20207f04    000000fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20200000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    20200000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       lcd_write_memory.o             700    144       96     
+       ti_msp_dl_config.o             498    4         0      
+       startup_mspm0l222x_ticlang.o   6      192       0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         1204   340       96     
+                                                              
+    C:/ti/mspm0_sdk_2_07_00_05/source/ti/driverlib/lib/ticlang/m0p/mspm0l122x_l222x/driverlib.a
+       dl_lcd.o                       244    0         0      
+       dl_common.o                    10     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         254    0         0      
+                                                              
+    C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/c/libc.a
+       autoinit.c.obj                 60     0         0      
+       boot_cortex_m.c.obj            40     0         0      
+       copy_zero_init.c.obj           22     0         0      
+       exit.c.obj                     6      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         132    0         0      
+                                                              
+    C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/c/libsysbm.a
+       hostexit.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         4      0         0      
+                                                              
+       Stack:                         0      0         256    
+       Linker Generated:              0      20        0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   1594   360       352    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000007a4 records: 1, size/record: 8, table size: 8
+	.bss: load addr=00000798, load size=00000008 bytes, run addr=20200000, run size=00000060 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000007a0 records: 1, size/record: 4, table size: 4
+	index: 0, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+0000057b  ADC0_IRQHandler               
+0000057b  AESADV_IRQHandler             
+000006ee  C$$EXIT                       
+000006df  DL_Common_delayCycles         
+00000641  DL_LCD_init                   
+000004f1  DL_LCD_setPinAsCommon         
+000005c1  DL_LCD_setPinAsLCDFunction    
+0000057b  DMA_IRQHandler                
+0000057b  Default_Handler               
+0000057b  GROUP0_IRQHandler             
+0000057b  GROUP1_IRQHandler             
+000006ef  HOSTexit                      
+0000057b  HardFault_Handler             
+0000057b  I2C0_IRQHandler               
+0000057b  I2C1_IRQHandler               
+0000057b  I2C2_IRQHandler               
+0000057b  LCD_IRQHandler                
+0000039d  LCD_showChar                  
+0000057b  LFSS_IRQHandler               
+0000057b  NMI_Handler                   
+0000057b  PendSV_Handler                
+000006f3  Reset_Handler                 
+0000057b  SPI0_IRQHandler               
+0000057b  SPI1_IRQHandler               
+0000057b  SVC_Handler                   
+00000603  SYSCFG_DL_GPIO_init           
+000000c1  SYSCFG_DL_LCD_init            
+00000691  SYSCFG_DL_SYSCTL_init         
+000006cb  SYSCFG_DL_init                
+0000057d  SYSCFG_DL_initPower           
+0000057b  SysTick_Handler               
+0000057b  TIMA0_IRQHandler              
+0000057b  TIMG0_IRQHandler              
+0000057b  TIMG12_IRQHandler             
+0000057b  TIMG4_IRQHandler              
+0000057b  TIMG5_IRQHandler              
+0000057b  TIMG8_IRQHandler              
+0000057b  UART0_IRQHandler              
+0000057b  UART1_IRQHandler              
+0000057b  UART2_IRQHandler              
+0000057b  UART3_IRQHandler              
+0000057b  UART4_IRQHandler              
+20208000  __STACK_END                   
+00000100  __STACK_SIZE                  
+00000000  __TI_ATRegion0_region_sz      
+00000000  __TI_ATRegion0_src_addr       
+00000000  __TI_ATRegion0_trg_addr       
+00000000  __TI_ATRegion1_region_sz      
+00000000  __TI_ATRegion1_src_addr       
+00000000  __TI_ATRegion1_trg_addr       
+00000000  __TI_ATRegion2_region_sz      
+00000000  __TI_ATRegion2_src_addr       
+00000000  __TI_ATRegion2_trg_addr       
+000007a4  __TI_CINIT_Base               
+000007ac  __TI_CINIT_Limit              
+000007ac  __TI_CINIT_Warm               
+000007a0  __TI_Handler_Table_Base       
+000007a4  __TI_Handler_Table_Limit      
+00000605  __TI_auto_init_nobinit_nopinit
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+000006b5  __TI_zero_init_nomemset       
+ffffffff  __binit__                     
+UNDEFED   __mpu_init                    
+20207f00  __stack                       
+20200000  __start___llvm_prf_bits       
+20200000  __start___llvm_prf_cnts       
+20200000  __stop___llvm_prf_bits        
+20200000  __stop___llvm_prf_cnts        
+00000669  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+000006f7  _system_pre_init              
+000006e9  abort                         
+00000700  alphabetUpper                 
+ffffffff  binit                         
+00000768  digit                         
+20200000  gLCDPinPosition1              
+20200010  gLCDPinPosition2              
+20200020  gLCDPinPosition3              
+20200030  gLCDPinPosition4              
+20200040  gLCDPinPosition5              
+20200050  gLCDPinPosition6              
+00000000  interruptVectors              
+00000235  main                          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_ATRegion0_region_sz      
+00000000  __TI_ATRegion0_src_addr       
+00000000  __TI_ATRegion0_trg_addr       
+00000000  __TI_ATRegion1_region_sz      
+00000000  __TI_ATRegion1_src_addr       
+00000000  __TI_ATRegion1_trg_addr       
+00000000  __TI_ATRegion2_region_sz      
+00000000  __TI_ATRegion2_src_addr       
+00000000  __TI_ATRegion2_trg_addr       
+00000000  __TI_static_base__            
+00000000  interruptVectors              
+000000c1  SYSCFG_DL_LCD_init            
+00000100  __STACK_SIZE                  
+00000235  main                          
+0000039d  LCD_showChar                  
+000004f1  DL_LCD_setPinAsCommon         
+0000057b  ADC0_IRQHandler               
+0000057b  AESADV_IRQHandler             
+0000057b  DMA_IRQHandler                
+0000057b  Default_Handler               
+0000057b  GROUP0_IRQHandler             
+0000057b  GROUP1_IRQHandler             
+0000057b  HardFault_Handler             
+0000057b  I2C0_IRQHandler               
+0000057b  I2C1_IRQHandler               
+0000057b  I2C2_IRQHandler               
+0000057b  LCD_IRQHandler                
+0000057b  LFSS_IRQHandler               
+0000057b  NMI_Handler                   
+0000057b  PendSV_Handler                
+0000057b  SPI0_IRQHandler               
+0000057b  SPI1_IRQHandler               
+0000057b  SVC_Handler                   
+0000057b  SysTick_Handler               
+0000057b  TIMA0_IRQHandler              
+0000057b  TIMG0_IRQHandler              
+0000057b  TIMG12_IRQHandler             
+0000057b  TIMG4_IRQHandler              
+0000057b  TIMG5_IRQHandler              
+0000057b  TIMG8_IRQHandler              
+0000057b  UART0_IRQHandler              
+0000057b  UART1_IRQHandler              
+0000057b  UART2_IRQHandler              
+0000057b  UART3_IRQHandler              
+0000057b  UART4_IRQHandler              
+0000057d  SYSCFG_DL_initPower           
+000005c1  DL_LCD_setPinAsLCDFunction    
+00000603  SYSCFG_DL_GPIO_init           
+00000605  __TI_auto_init_nobinit_nopinit
+00000641  DL_LCD_init                   
+00000669  _c_int00_noargs               
+00000691  SYSCFG_DL_SYSCTL_init         
+000006b5  __TI_zero_init_nomemset       
+000006cb  SYSCFG_DL_init                
+000006df  DL_Common_delayCycles         
+000006e9  abort                         
+000006ee  C$$EXIT                       
+000006ef  HOSTexit                      
+000006f3  Reset_Handler                 
+000006f7  _system_pre_init              
+00000700  alphabetUpper                 
+00000768  digit                         
+000007a0  __TI_Handler_Table_Base       
+000007a4  __TI_CINIT_Base               
+000007a4  __TI_Handler_Table_Limit      
+000007ac  __TI_CINIT_Limit              
+000007ac  __TI_CINIT_Warm               
+20200000  __start___llvm_prf_bits       
+20200000  __start___llvm_prf_cnts       
+20200000  __stop___llvm_prf_bits        
+20200000  __stop___llvm_prf_cnts        
+20200000  gLCDPinPosition1              
+20200010  gLCDPinPosition2              
+20200020  gLCDPinPosition3              
+20200030  gLCDPinPosition4              
+20200040  gLCDPinPosition5              
+20200050  gLCDPinPosition6              
+20207f00  __stack                       
+20208000  __STACK_END                   
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[86 symbols]

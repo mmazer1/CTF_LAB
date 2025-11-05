@@ -1,0 +1,12 @@
+[
+   {
+      "directory" : "C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang/Debug",
+      "command"   : "clang++ -D__MSPM0L2228__ -D__USE_SYSCONFIG__ -I\"C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang\" -I\"C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang/Debug\" -I\"C:/ti/mspm0_sdk_2_07_00_05/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_07_00_05/source\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang/Debug/ti_msp_dl_config.c"
+   },
+   {
+      "directory" : "C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang/Debug",
+      "command"   : "clang++ -D__MSPM0L2228__ -D__USE_SYSCONFIG__ -I\"C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang\" -I\"C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang/Debug\" -I\"C:/ti/mspm0_sdk_2_07_00_05/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_07_00_05/source\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "C:/Users/maxma/workspace_ccstheia/ctf_LAB/lcd_write_memory_LP_MSPM0L2228_nortos_ticlang/lcd_write_memory.c"
+   }
+]
